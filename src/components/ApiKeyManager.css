@@ -1,0 +1,156 @@
+.api-key-manager {
+  position: relative;
+}
+
+.api-key-toggle {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.api-key-toggle:hover {
+  background: #e0e0e0;
+}
+
+.api-key-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 400px;
+}
+
+.api-key-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.api-key-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.api-key-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.api-key-close:hover {
+  color: #333;
+}
+
+.api-key-content {
+  padding: 16px;
+}
+
+.api-key-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.api-key-input-wrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.api-key-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.api-key-input:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+.api-key-toggle-visibility {
+  padding: 10px 12px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.api-key-toggle-visibility:hover {
+  background: #e0e0e0;
+}
+
+.api-key-hint {
+  margin: 0 0 16px 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.api-key-hint a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.api-key-hint a:hover {
+  text-decoration: underline;
+}
+
+.api-key-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.api-key-button {
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.api-key-button.cancel {
+  background: white;
+  color: #333;
+}
+
+.api-key-button.cancel:hover {
+  background: #f5f5f5;
+}
+
+.api-key-button.save {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+.api-key-button.save:hover {
+  background: #1565c0;
+}
+
