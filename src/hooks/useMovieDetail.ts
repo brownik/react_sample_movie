@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import MovieService from '../services/movieService';
 import type { MovieDetailResponse } from '../types/api';
+import { CACHE_TIME, RETRY_COUNT } from '../constants/app';
 
 const movieService = new MovieService();
 
@@ -15,8 +16,8 @@ export function useMovieDetail({ imdbId, apiKey, enabled = true }: UseMovieDetai
     queryKey: ['movieDetail', imdbId, apiKey],
     queryFn: () => movieService.getMovieDetail(imdbId, apiKey),
     enabled: enabled && !!imdbId && !!apiKey,
-    staleTime: 10 * 60 * 1000, // 10분
-    retry: 1,
+    staleTime: CACHE_TIME.MOVIE_DETAIL,
+    retry: RETRY_COUNT,
   });
 }
 

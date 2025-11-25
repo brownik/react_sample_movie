@@ -5,27 +5,29 @@ import './MovieList.css';
 
 interface MovieListProps {
   movies: Movie[];
-  isLoading: boolean;
+  isLoading?: boolean;
   error: Error | null;
 }
 
-export function MovieList({ movies, isLoading, error }: MovieListProps) {
-  if (isLoading) {
-    return (
-      <div className="movie-list-loading">
-        <p>영화를 검색하는 중...</p>
-      </div>
-    );
-  }
-
+export function MovieList({ movies, error }: MovieListProps) {
   if (error) {
     const isApiKeyError = error.message.includes('API 키');
+    const isServerError = error.message.includes('서버') || error.message.includes('과부하');
+    const isTimeoutError = error.message.includes('시간이 초과');
+    
     return (
       <div className="movie-list-error">
         <p>{error.message}</p>
         {isApiKeyError && (
           <p className="error-hint">
             헤더의 "⚙️ API 키 관리" 버튼을 클릭하여 올바른 API 키를 입력해주세요.
+          </p>
+        )}
+        {(isServerError || isTimeoutError) && (
+          <p className="error-hint">
+            OMDb API 서버에 일시적인 문제가 발생했습니다. 잠시 후 다시 시도해주세요.
+            <br />
+            <small>서버가 과부하 상태이거나 소켓 버퍼가 가득 찬 경우 발생할 수 있습니다.</small>
           </p>
         )}
       </div>

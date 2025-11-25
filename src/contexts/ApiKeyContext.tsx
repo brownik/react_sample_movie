@@ -1,4 +1,6 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { STORAGE_KEYS, DEFAULT_API_KEY } from '../constants/app';
 
 interface ApiKeyContextType {
   apiKey: string;
@@ -8,17 +10,14 @@ interface ApiKeyContextType {
 
 const ApiKeyContext = createContext<ApiKeyContextType | undefined>(undefined);
 
-const API_KEY_STORAGE_KEY = 'omdb_api_key';
-const DEFAULT_API_KEY = 'a48d577a';
-
 export function ApiKeyProvider({ children }: { children: ReactNode }) {
   const [apiKey, setApiKeyState] = useState<string>(() => {
-    const stored = localStorage.getItem(API_KEY_STORAGE_KEY);
+    const stored = localStorage.getItem(STORAGE_KEYS.API_KEY);
     return stored || DEFAULT_API_KEY;
   });
 
   useEffect(() => {
-    localStorage.setItem(API_KEY_STORAGE_KEY, apiKey);
+    localStorage.setItem(STORAGE_KEYS.API_KEY, apiKey);
   }, [apiKey]);
 
   const setApiKey = (key: string) => {

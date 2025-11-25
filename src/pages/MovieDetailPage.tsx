@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useApiKey } from '../contexts/ApiKeyContext';
 import { useMovieDetail } from '../hooks/useMovieDetail';
+import { MovieDetailSkeleton } from '../components/Skeleton';
 import './MovieDetailPage.css';
 
 export function MovieDetailPage() {
@@ -17,8 +18,8 @@ export function MovieDetailPage() {
   if (isLoading) {
     return (
       <div className="movie-detail-page">
-        <div className="movie-detail-loading">
-          <p>영화 정보를 불러오는 중...</p>
+        <div className="movie-detail-container">
+          <MovieDetailSkeleton />
         </div>
       </div>
     );

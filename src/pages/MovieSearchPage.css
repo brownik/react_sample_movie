@@ -31,6 +31,56 @@
   font-size: 14px;
 }
 
+.filter-indicator {
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.filter-loading {
+  color: #666;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.filter-note-text {
+  color: #999;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.genre-filter-note {
+  margin-top: 24px;
+  padding: 16px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  border-left: 4px solid #1976d2;
+}
+
+.genre-filter-note p {
+  margin: 0 0 12px 0;
+  color: #1976d2;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.genre-filter-prev-page,
+.genre-filter-next-page {
+  padding: 8px 16px;
+  margin-right: 8px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.genre-filter-prev-page:hover,
+.genre-filter-next-page:hover {
+  background: #1565c0;
+}
+
 .movie-search-empty {
   text-align: center;
   padding: 80px 24px;
