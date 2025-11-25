@@ -9,7 +9,8 @@ export const STORAGE_KEYS = {
 } as const;
 
 // 기본값
-export const DEFAULT_API_KEY = 'a48d577a';
+// TODO: DEFAULT API KEY 작성
+export const DEFAULT_API_KEY = '';
 
 // 페이지당 결과 수
 export const RESULTS_PER_PAGE = 10;
